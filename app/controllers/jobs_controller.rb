@@ -26,6 +26,9 @@ class JobsController < ApplicationController
 		p job
 		redirect_to jobs_path
 	end
+	def show
+		@job = Job.find(params[:id])
+	end
 
 	#Using strong paremeters to limit whatever data our form can submit to our app
 
