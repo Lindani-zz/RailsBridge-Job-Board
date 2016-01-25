@@ -1,5 +1,6 @@
 <h1>Rails Bridge Open Jobs</h1>
-<% @jobs.each do |job| %>
+<% @jobs.each_with_index do |job| %>
   <h3><%= job.title %></h3>
   <p><%= job.description %></p>
+<!-- <p><%= job.id%></p> -->
 <% end %>
