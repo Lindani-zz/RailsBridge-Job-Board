@@ -1,17 +1,30 @@
 <h1>Rails Bridge Open Jobs</h1>
-<table style="width:100%">
-   <tr style = "text-align:left; background-color:brown">
+<table id="sorted_jobs" class="display" cellspacing="0" width="100%">
+  <thead>
+     <tr style = "text-align:left; background-color:brown">
       <th>Index</th>
       <th>Title</th>
       <th>Created Date</th> 
       <th>Page Details</th>
-  </tr>
-	<% @jobs.each do |job| %>
-		<tr>
-      <td><%= job.id %></td>
-			<td><%= job.title %></td>
-		  <td><%= job.created_at%></td>
-			<td><%= link_to "show page", job%></td>
-		</tr>
-	<% end %>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr style = "text-align:left; background-color:brown">
+      <th>Index</th>
+      <th>Title</th>
+      <th>Created Date</th> 
+      <th>Page Details</th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <% @jobs.each do |job| %>
+      <td></td>
+      <td><%= job.title %></td>
+      <td><%= job.created_at%></td>
+      <td><%= link_to "show page", job%></td>
+    </tr>
+    <% end %>
+  </tbody>
+	
 </table>
