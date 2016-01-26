@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'quiet_assets'
 gem 'seed_dump'
+gem 'jquery-datatables-rails', '~> 3.3.0'
 
 
 
