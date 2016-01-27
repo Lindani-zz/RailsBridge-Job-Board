@@ -1,6 +1,10 @@
 class JobsController < ApplicationController
 	def index
-		@jobs = Job.all
+		if params[:tag]
+			@jobs = Job.tagged_with(params[:name])
+		else
+			@jobs = Job.all
+		end
 	end
 	def new
 		@job = Job.new
@@ -35,6 +39,6 @@ class JobsController < ApplicationController
 	private
 
 	def job_params
-	  params.require(:job).permit(:title, :description, :requirements)
+	  params.require(:job).permit(:title, :description, :requirements, :name, :tag_list)
 	end
 end
