@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :jobs
-
+    #Root page whenever I logout or redirecting to root page by any means
+    root 'jobs#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
