@@ -1,6 +1,7 @@
 class Job < ActiveRecord::Base
   	has_many :taggings
   	has_many :tags, through: :taggings
+  	validates :title, :description, :requirements, :taggings,  presence: { strict: true }
 
 	def self.tagged_with(name = "ruby")
 		Tag.find_by_name!(name).jobs
