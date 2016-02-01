@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 	describe Job do
-	  it "has a valid factory"
+	  it "has a valid factory" do
+	  	FactoryGirl.create(:job).should be_valid
+	  end
 	  it "is invalid without a title"
 	  it "is invalid without a description"
 	  it "returns a job's full name as a string"
