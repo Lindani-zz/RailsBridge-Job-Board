@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :jobs
+  resources :jobs
   devise_for :users
   resources :jobs
     #Root page whenever I logout or redirecting to root page by any means
