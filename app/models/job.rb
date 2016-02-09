@@ -1,8 +1,8 @@
 class Job < ActiveRecord::Base
 	has_many :taggings
   	has_many :tags, through: :taggings
-  	validates :title, presence: true, length: { minimum: 5}
-  	validates :description,  presence: true, length: { minimum: 10}
+  	# validates :title, presence: true, length: { minimum: 5}
+  	# validates :description,  presence: true, length: { minimum: 10}
   	# validates :title, :description, :requirements, :taggings, presence: true#{ strict: true }
 
 
