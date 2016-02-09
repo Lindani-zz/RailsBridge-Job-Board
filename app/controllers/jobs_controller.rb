@@ -7,7 +7,7 @@ class JobsController < ApplicationController
 		end
 	end
 	def new
-		@job = Job.new
+	  @job = Job.new
 	end
 
 	def edit
@@ -16,7 +16,7 @@ class JobsController < ApplicationController
 	def update
 		@job = Job.find(params[:id])
   		@job.update_attributes(job_params)
-		redirect_to jobs_path
+		redirect_to jobs_path(@job)
 	end
 	def destroy
 		@job = Job.find(params[:id])
@@ -25,11 +25,15 @@ class JobsController < ApplicationController
 	end
 	#Creating a new job entry
 	def create
-		p "IN THE CREATE METHOD!!!!"
-		job = Job.create(job_params)
-		p job
-		redirect_to jobs_path
+		binding.pry
+		@job = Job.new(job_params)
+		if @job.save
+		  redirect_to jobs_path
+		else
+          render :new
+		end  
 	end
+
 	def show
 		@job = Job.find(params[:id])
 	end
