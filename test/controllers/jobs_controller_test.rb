@@ -7,7 +7,7 @@ class JobsControllerTest < ActionController::TestCase
     @job ||= jobs(:one)
   end
   test "should get index" do
-    sign_in user(user1)
+    sign_in users(:user1)
     get :index
     assert_response :success
     assert_not_nil assigns(:jobs)
