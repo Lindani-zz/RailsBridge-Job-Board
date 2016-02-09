@@ -25,7 +25,6 @@ class JobsController < ApplicationController
 	end
 	#Creating a new job entry
 	def create
-		binding.pry
 		@job = Job.new(job_params)
 		if @job.save
 		  redirect_to jobs_path
