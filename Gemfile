@@ -60,6 +60,7 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
+  gem 'minitest-reporters'
 end
 group :development, :test do
 	# gem 'shoulda-matchers'
