@@ -1,13 +1,12 @@
 require "test_helper"
 
 class JobsControllerTest < ActionController::TestCase
-  include Devise::TestHelpers
+
   setup do
     sign_in users(:user1)
     @job ||= jobs(:one)
   end
   test "should get index" do
-    sign_in users(:user1)
     get :index
     assert_response :success
     assert_not_nil assigns(:jobs)
@@ -19,7 +18,7 @@ class JobsControllerTest < ActionController::TestCase
   end
 
   test "should create job" do
-    sign_in users(:user1)
+    
     assert_difference('Job.count') do
       post :create, job: { title: @job.title, description: @job.description, requirements: @job.requirements }
     end
@@ -38,7 +37,7 @@ class JobsControllerTest < ActionController::TestCase
   end
 
   test "should update job" do
-    sign_in users(:user1)
+    
     put :update, id: @job, job: { title: @job.title, description: @job.description, requirements: @job.requirements }
     assert_redirected_to jobs_path(assigns(:job))
   end
