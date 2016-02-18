@@ -156,6 +156,7 @@ GEM
     pry-byebug (3.3.0)
       byebug (~> 8.0)
       pry (~> 0.10)
+    puma (2.16.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -283,6 +284,7 @@ DEPENDENCIES
   pg
   pry (~> 0.10.3)
   pry-byebug
+  puma
   quiet_assets
   rails (= 4.2.5)
   rails_12factor
